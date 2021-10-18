@@ -17,3 +17,5 @@ RetransmissionArray: Array where jobs are placed that need to be resend, they al
 		     random delay that counts till 0 so de sendJob can be added to the transmissionArray again
 
 PS: I could have combined few arrays but for simplicity I didnt do it (yet), could always be improved 
+
+There are a few visual bugs which are visible at the beginning of running the simulation
