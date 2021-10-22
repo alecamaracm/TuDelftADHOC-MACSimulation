@@ -9,8 +9,6 @@ C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulat
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.CoreCompileInputs.cache
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.exe
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.pdb
-C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\System.dll
-C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\System.xml
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.AssemblyReference.cache
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\error.png
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\tick.png
