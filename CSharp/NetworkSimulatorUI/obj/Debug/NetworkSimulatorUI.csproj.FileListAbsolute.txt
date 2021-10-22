@@ -12,3 +12,18 @@ C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulat
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.AssemblyReference.cache
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\error.png
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\tick.png
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\error.png
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\tick.png
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\NetworkSimulatorUI.exe.config
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\NetworkSimulatorUI.exe
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\NetworkSimulatorUI.pdb
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\SimplGraphics.dll
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\System.ValueTuple.dll
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\System.ValueTuple.xml
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.AssemblyReference.cache
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.Form1.resources
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.Properties.Resources.resources
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.GenerateResource.cache
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.CoreCompileInputs.cache
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.exe
+C:\Users\Maksym\Desktop\Master\ET4388 Adhoc Networks\Project2\SharedFolder\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.pdb

@@ -8,8 +8,7 @@ namespace NetworkSimulatorUI.Protocols
 {
     public class CSMA_CD:BaseNode
     {
-        public List<byte[]> frameReadyToBeSent = new List<byte[]>();
-
+        public List<byte[]> frameReadyToBeSent = new List<byte[]>();     
 
         public (DateTime whenToSend, byte[] dataToResend) messageToSendLater;
         public bool meessageSheduledToBeSentLater = false;
@@ -39,14 +38,17 @@ namespace NetworkSimulatorUI.Protocols
             }
 
 
-
             if (otherMessagesBeingReceived && messageBeingSent!=null) //Interference incoming from other nodes, so stop sending the current message
             {
+                //ADD extra random value so nodes will retransmit in a random amount of time
+                Random rnd = new Random();
+                int newRandom = rnd.Next(0, 25);
+
                 messageBeingSent.StopSending();
                 retransmissionCount++;
-                messageToSendLater=(DateTime.Now.AddSeconds(5*retransmissionCount), messageBeingSent.data); //Schedule message to be sent later
+                messageToSendLater =(DateTime.Now.AddSeconds(newRandom), messageBeingSent.data); //Schedule message to be sent later
                 meessageSheduledToBeSentLater = true;
-                Console.WriteLine($"Detected interference in CSMA_CD node {id}. Sending message {5 * retransmissionCount} seconds later...");
+                Console.WriteLine($"Detected interference in CSMA_CD node {id}. Sending message {newRandom} seconds later...");
                 messageBeingSent = null;
 
             }
@@ -62,7 +64,7 @@ namespace NetworkSimulatorUI.Protocols
 
         protected override void MessageReceived(OngoingMessage message)
         {
-            Console.WriteLine($"Received message {message.id} from {message.origin} with {message.data.Length} bytes of data on a ALOHA node.");
+            Console.WriteLine($"Received message {message.id} from {message.origin} with {message.data.Length} bytes of data on a node.");
         }
     }
 }
