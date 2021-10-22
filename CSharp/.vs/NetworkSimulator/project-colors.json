@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9dcc5c96-e695-4005-b583-88fd907f85c5": {
+      "ProjectGuid": "9dcc5c96-e695-4005-b583-88fd907f85c5",
+      "DisplayName": "NetworkSimulator",
+      "ColorIndex": 0
+    },
+    "ac47cd5a-5896-44c8-8f3d-8283c59fffad": {
+      "ProjectGuid": "ac47cd5a-5896-44c8-8f3d-8283c59fffad",
+      "DisplayName": "NetworkSimulatorUI",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
