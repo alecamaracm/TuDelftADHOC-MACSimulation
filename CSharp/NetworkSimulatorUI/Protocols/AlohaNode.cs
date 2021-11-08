@@ -10,19 +10,20 @@ namespace NetworkSimulatorUI.Protocols
     {        
         public List<(DateTime whenToSend, byte[] dataToResend)> messagesToSendLater = new List<(DateTime whenToSend, byte[] dataToResend)>();
 
-        public override void SendMessage(byte[] dataToSend) //This will be called whenever a message needs to be sent (Ex. a sensor has new data)
+        protected override void SendMessageInternal(byte[] dataToSend) //This will be called whenever a message needs to be sent (Ex. a sensor has new data)
         {
             SendRawMessage(dataToSend);
         }
 
-        protected override void SimulateTickInternal(bool otherMessagesBeingReceived)
+        protected override void SimulateTickInternal(bool otherMessagesBeingReceived, float timeScale)
         {  
             if (otherMessagesBeingReceived) //Interference incoming from other nodes, so stop sending
             {
                 foreach (var message in currentlyBeingSentMessages)
                 {
+                    Simulation.failedCount++;
                     message.StopSending();
-                    messagesToSendLater.Add((DateTime.Now.AddSeconds(5), message.data)); //Schedure message to be sent later
+                    messagesToSendLater.Add((DateTime.Now.AddMilliseconds(Form1.random.Next(500,3000)/ timeScale), message.data)); //Schedure message to be sent later
                     Console.WriteLine($"Detected interference in ALOHA node {id}. Sending message {message.id} later...");
                 }
             }
@@ -32,8 +33,9 @@ namespace NetworkSimulatorUI.Protocols
                 if (DateTime.Now >= messageToSendLater.whenToSend)
                 {
                     messagesToSendLater.Remove(messageToSendLater);
-                    SendMessage(messageToSendLater.dataToResend);
+                    SendMessageInternal(messageToSendLater.dataToResend);
                     Console.WriteLine($"Resending ALOHA message as scheduled.");
+                    Simulation.resendCount++;
                 }
             }
         }

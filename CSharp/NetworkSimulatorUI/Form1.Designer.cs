@@ -38,6 +38,7 @@
             this.numericUpDownWorldSizeX = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxCPUkiller = new System.Windows.Forms.CheckBox();
             this.buttonRestartSimulation = new System.Windows.Forms.Button();
             this.checkBoxRenderEnabled = new System.Windows.Forms.CheckBox();
             this.numericUpDownRenderInterval = new System.Windows.Forms.NumericUpDown();
@@ -46,6 +47,11 @@
             this.numericUpDownTimeScale = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownRandomSize = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numericUpDownMaxInterval = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.checkBoxRandomMessages = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxSimulationCommands = new System.Windows.Forms.TextBox();
             this.radioButtonCSMA_CD = new System.Windows.Forms.RadioButton();
@@ -56,6 +62,10 @@
             this.numericUpDownNodesToCreate = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelAverageNumberOfResends = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.labelFinalProbability = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.buttonClearLogs = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxLogOutput = new System.Windows.Forms.TextBox();
@@ -84,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRenderInterval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeScale)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRandomSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxInterval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartingSeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNodesToCreate)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -220,6 +232,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.checkBoxCPUkiller);
             this.groupBox2.Controls.Add(this.buttonRestartSimulation);
             this.groupBox2.Controls.Add(this.checkBoxRenderEnabled);
             this.groupBox2.Controls.Add(this.numericUpDownRenderInterval);
@@ -234,10 +247,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Simulation controls";
             // 
+            // checkBoxCPUkiller
+            // 
+            this.checkBoxCPUkiller.AutoSize = true;
+            this.checkBoxCPUkiller.Location = new System.Drawing.Point(190, 64);
+            this.checkBoxCPUkiller.Name = "checkBoxCPUkiller";
+            this.checkBoxCPUkiller.Size = new System.Drawing.Size(88, 20);
+            this.checkBoxCPUkiller.TabIndex = 10;
+            this.checkBoxCPUkiller.Text = "CPU killer";
+            this.checkBoxCPUkiller.UseVisualStyleBackColor = true;
+            // 
             // buttonRestartSimulation
             // 
             this.buttonRestartSimulation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRestartSimulation.Location = new System.Drawing.Point(75, 58);
+            this.buttonRestartSimulation.Location = new System.Drawing.Point(0, 54);
             this.buttonRestartSimulation.Name = "buttonRestartSimulation";
             this.buttonRestartSimulation.Size = new System.Drawing.Size(167, 35);
             this.buttonRestartSimulation.TabIndex = 8;
@@ -333,6 +356,11 @@
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.numericUpDownRandomSize);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.numericUpDownMaxInterval);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.checkBoxRandomMessages);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.textBoxSimulationCommands);
             this.groupBox3.Controls.Add(this.radioButtonCSMA_CD);
@@ -348,6 +376,80 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Simulation input";
+            // 
+            // numericUpDownRandomSize
+            // 
+            this.numericUpDownRandomSize.Location = new System.Drawing.Point(430, 76);
+            this.numericUpDownRandomSize.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownRandomSize.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDownRandomSize.Name = "numericUpDownRandomSize";
+            this.numericUpDownRandomSize.Size = new System.Drawing.Size(70, 22);
+            this.numericUpDownRandomSize.TabIndex = 15;
+            this.numericUpDownRandomSize.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(370, 78);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 16);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Size (B):";
+            // 
+            // numericUpDownMaxInterval
+            // 
+            this.numericUpDownMaxInterval.Location = new System.Drawing.Point(430, 55);
+            this.numericUpDownMaxInterval.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownMaxInterval.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDownMaxInterval.Name = "numericUpDownMaxInterval";
+            this.numericUpDownMaxInterval.Size = new System.Drawing.Size(70, 22);
+            this.numericUpDownMaxInterval.TabIndex = 17;
+            this.numericUpDownMaxInterval.Value = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(284, 57);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(147, 16);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Node interval max (ms):\r\n";
+            // 
+            // checkBoxRandomMessages
+            // 
+            this.checkBoxRandomMessages.AutoSize = true;
+            this.checkBoxRandomMessages.Checked = true;
+            this.checkBoxRandomMessages.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRandomMessages.Location = new System.Drawing.Point(29, 56);
+            this.checkBoxRandomMessages.Name = "checkBoxRandomMessages";
+            this.checkBoxRandomMessages.Size = new System.Drawing.Size(210, 20);
+            this.checkBoxRandomMessages.TabIndex = 16;
+            this.checkBoxRandomMessages.Text = "Use infinite random messages";
+            this.checkBoxRandomMessages.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -373,7 +475,7 @@
             // 
             this.radioButtonCSMA_CD.AutoSize = true;
             this.radioButtonCSMA_CD.Checked = true;
-            this.radioButtonCSMA_CD.Location = new System.Drawing.Point(397, 64);
+            this.radioButtonCSMA_CD.Location = new System.Drawing.Point(606, 75);
             this.radioButtonCSMA_CD.Name = "radioButtonCSMA_CD";
             this.radioButtonCSMA_CD.Size = new System.Drawing.Size(89, 20);
             this.radioButtonCSMA_CD.TabIndex = 13;
@@ -384,7 +486,7 @@
             // radioButtonNONE
             // 
             this.radioButtonNONE.AutoSize = true;
-            this.radioButtonNONE.Location = new System.Drawing.Point(236, 64);
+            this.radioButtonNONE.Location = new System.Drawing.Point(606, 24);
             this.radioButtonNONE.Name = "radioButtonNONE";
             this.radioButtonNONE.Size = new System.Drawing.Size(67, 20);
             this.radioButtonNONE.TabIndex = 12;
@@ -394,7 +496,7 @@
             // radioButtonALOHA
             // 
             this.radioButtonALOHA.AutoSize = true;
-            this.radioButtonALOHA.Location = new System.Drawing.Point(318, 64);
+            this.radioButtonALOHA.Location = new System.Drawing.Point(606, 49);
             this.radioButtonALOHA.Name = "radioButtonALOHA";
             this.radioButtonALOHA.Size = new System.Drawing.Size(73, 20);
             this.radioButtonALOHA.TabIndex = 11;
@@ -403,7 +505,7 @@
             // 
             // numericUpDownStartingSeed
             // 
-            this.numericUpDownStartingSeed.Location = new System.Drawing.Point(621, 26);
+            this.numericUpDownStartingSeed.Location = new System.Drawing.Point(430, 27);
             this.numericUpDownStartingSeed.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -426,7 +528,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(515, 28);
+            this.label6.Location = new System.Drawing.Point(324, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 10;
@@ -449,7 +551,7 @@
             this.numericUpDownNodesToCreate.Size = new System.Drawing.Size(70, 22);
             this.numericUpDownNodesToCreate.TabIndex = 7;
             this.numericUpDownNodesToCreate.Value = new decimal(new int[] {
-            5,
+            4,
             0,
             0,
             0});
@@ -467,6 +569,10 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.labelAverageNumberOfResends);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.labelFinalProbability);
+            this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.buttonClearLogs);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.textBoxLogOutput);
@@ -477,11 +583,53 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Simulation  output";
             // 
+            // labelAverageNumberOfResends
+            // 
+            this.labelAverageNumberOfResends.AutoSize = true;
+            this.labelAverageNumberOfResends.Font = new System.Drawing.Font("Segoe UI Semibold", 12.096F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAverageNumberOfResends.Location = new System.Drawing.Point(669, 49);
+            this.labelAverageNumberOfResends.Name = "labelAverageNumberOfResends";
+            this.labelAverageNumberOfResends.Size = new System.Drawing.Size(49, 30);
+            this.labelAverageNumberOfResends.TabIndex = 19;
+            this.labelAverageNumberOfResends.Text = "- - -";
+            this.labelAverageNumberOfResends.Click += new System.EventHandler(this.labelAverageNumberOfResends_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.792F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(424, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(226, 23);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Average number of resends:\r\n";
+            // 
+            // labelFinalProbability
+            // 
+            this.labelFinalProbability.AutoSize = true;
+            this.labelFinalProbability.Font = new System.Drawing.Font("Segoe UI Semibold", 12.096F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFinalProbability.Location = new System.Drawing.Point(669, 18);
+            this.labelFinalProbability.Name = "labelFinalProbability";
+            this.labelFinalProbability.Size = new System.Drawing.Size(49, 30);
+            this.labelFinalProbability.TabIndex = 17;
+            this.labelFinalProbability.Text = "- - -";
+            this.labelFinalProbability.Click += new System.EventHandler(this.labelFinalProbability_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.792F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(420, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(229, 23);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Message success probability:\r\n";
+            // 
             // buttonClearLogs
             // 
             this.buttonClearLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClearLogs.Font = new System.Drawing.Font("Segoe UI", 9.216F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClearLogs.Location = new System.Drawing.Point(590, 14);
+            this.buttonClearLogs.Location = new System.Drawing.Point(258, 15);
             this.buttonClearLogs.Name = "buttonClearLogs";
             this.buttonClearLogs.Size = new System.Drawing.Size(145, 34);
             this.buttonClearLogs.TabIndex = 10;
@@ -509,7 +657,7 @@
             this.textBoxLogOutput.Name = "textBoxLogOutput";
             this.textBoxLogOutput.ReadOnly = true;
             this.textBoxLogOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxLogOutput.Size = new System.Drawing.Size(726, 160);
+            this.textBoxLogOutput.Size = new System.Drawing.Size(397, 160);
             this.textBoxLogOutput.TabIndex = 0;
             // 
             // groupBox5
@@ -641,10 +789,10 @@
             this.numericUpDownTransmissionProbability.Size = new System.Drawing.Size(94, 22);
             this.numericUpDownTransmissionProbability.TabIndex = 9;
             this.numericUpDownTransmissionProbability.Value = new decimal(new int[] {
-            9,
+            1,
             0,
             0,
-            65536});
+            0});
             // 
             // label12
             // 
@@ -672,7 +820,7 @@
             this.numericUpDownTransmissionSpeed.Size = new System.Drawing.Size(94, 22);
             this.numericUpDownTransmissionSpeed.TabIndex = 5;
             this.numericUpDownTransmissionSpeed.Value = new decimal(new int[] {
-            2,
+            15,
             0,
             0,
             0});
@@ -722,7 +870,7 @@
             // timerUpdate
             // 
             this.timerUpdate.Enabled = true;
-            this.timerUpdate.Interval = 50;
+            this.timerUpdate.Interval = 15;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
             // Form1
@@ -752,6 +900,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeScale)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRandomSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxInterval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartingSeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNodesToCreate)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -818,6 +968,16 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxLogOutput;
         private System.Windows.Forms.Button buttonClearLogs;
+        private System.Windows.Forms.Label labelFinalProbability;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelAverageNumberOfResends;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numericUpDownMaxInterval;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox checkBoxRandomMessages;
+        private System.Windows.Forms.NumericUpDown numericUpDownRandomSize;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckBox checkBoxCPUkiller;
     }
 }
 

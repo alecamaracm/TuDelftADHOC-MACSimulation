@@ -12,3 +12,4 @@ C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulat
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.AssemblyReference.cache
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\error.png
 C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\bin\Debug\Images\tick.png
+C:\TuDelftADHOC-MACSimulation\CSharp\NetworkSimulatorUI\obj\Debug\NetworkSimulatorUI.csproj.CopyComplete

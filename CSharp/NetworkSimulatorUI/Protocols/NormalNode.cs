@@ -8,7 +8,7 @@ namespace NetworkSimulatorUI.Protocols
 {
     public class NormalNode : BaseNode
     {
-        public override void SendMessage(byte[] dataToSend)
+        protected override void SendMessageInternal(byte[] dataToSend)
         {
             SendRawMessage(dataToSend);
         }
@@ -19,7 +19,7 @@ namespace NetworkSimulatorUI.Protocols
         }
 
 
-        protected override void SimulateTickInternal(bool otherMessagesBeingReceived)
+        protected override void SimulateTickInternal(bool otherMessagesBeingReceived, float timeScale)
         {
         }
     }

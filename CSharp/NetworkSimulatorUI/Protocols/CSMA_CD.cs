@@ -18,12 +18,12 @@ namespace NetworkSimulatorUI.Protocols
 
         public OngoingMessage messageBeingSent = null;
 
-        public override void SendMessage(byte[] dataToSend) //This will be called whenever a message needs to be sent (Ex. a sensor has new data)
+        protected override void SendMessageInternal(byte[] dataToSend) //This will be called whenever a message needs to be sent (Ex. a sensor has new data)
         {
             frameReadyToBeSent.Add(dataToSend);           
         }
 
-        protected override void SimulateTickInternal(bool otherMessagesBeingReceived)
+        protected override void SimulateTickInternal(bool otherMessagesBeingReceived, float timeScale)
         {
             if (messageBeingSent != null && messageBeingSent.HasFinishedSending) messageBeingSent = null;
 
@@ -31,10 +31,12 @@ namespace NetworkSimulatorUI.Protocols
             {
                 if(frameReadyToBeSent.Count> 0)
                 {
+
                     retransmissionCount = 0;
                     messageBeingSent = SendRawMessage(frameReadyToBeSent[0]); //Send the packet
                     Console.WriteLine("Starting to send CSMA_CD message");
                     frameReadyToBeSent.RemoveAt(0);
+
                 }        
             }
 
@@ -42,10 +44,12 @@ namespace NetworkSimulatorUI.Protocols
 
             if (otherMessagesBeingReceived && messageBeingSent!=null) //Interference incoming from other nodes, so stop sending the current message
             {
+                Simulation.failedCount++;
                 messageBeingSent.StopSending();
                 retransmissionCount++;
-                messageToSendLater=(DateTime.Now.AddSeconds(5*retransmissionCount), messageBeingSent.data); //Schedule message to be sent later
+                messageToSendLater=(DateTime.Now.AddMilliseconds((500*retransmissionCount)*timeScale), messageBeingSent.data); //Schedule message to be sent later
                 meessageSheduledToBeSentLater = true;
+                Simulation.resendCount++;
                 Console.WriteLine($"Detected interference in CSMA_CD node {id}. Sending message {5 * retransmissionCount} seconds later...");
                 messageBeingSent = null;
 

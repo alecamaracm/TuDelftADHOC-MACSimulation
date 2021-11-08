@@ -15,7 +15,24 @@ namespace NetworkSimulatorUI
         public static int lastUsedNodeID = -1;
         public static int lastUsedMessageID = -1;
 
-        public static Dictionary<int,OngoingMessage> messages = new Dictionary<int,OngoingMessage>();        
+        public static Dictionary<int,OngoingMessage> messages = new Dictionary<int,OngoingMessage>();
+
+        public static int successCount = 0;
+        public static int failedCount = 0;
+
+        public static int resendCount = 0;
+        public static int totalPaketsSent = 0;
+
+
+        public static float GetMessageSuccessProbability()
+        {
+            return successCount / (float)(successCount+failedCount);
+        }
+
+        public static float GetAverageNumberOfResends()
+        {
+            return resendCount / (float)totalPaketsSent;
+        }
     }
 
     public class OngoingMessage
@@ -77,7 +94,7 @@ namespace NetworkSimulatorUI
         public List<OngoingMessage> currentlyBeingSentMessages = new List<OngoingMessage>();
 
 
-        public void SimulateTick(List<OngoingMessage> receivingMessages,float messageSuccessProbability,float timeElapsed)
+        public void SimulateTick(List<OngoingMessage> receivingMessages,float messageSuccessProbability,float timeElapsed,float timeScale)
         {
             drawErrorTimeLeft -= timeElapsed;
             drawTickTimeLeft -= timeElapsed;
@@ -94,6 +111,7 @@ namespace NetworkSimulatorUI
                     if (messagesFailedToReceive.Contains(message.id) == false)
                     {
                         drawErrorTimeLeft = 1;
+                        Simulation.failedCount++;
                         messagesFailedToReceive.Add(message.id);
                     }
                 }
@@ -120,12 +138,14 @@ namespace NetworkSimulatorUI
                     {
                         if (Form1.random.NextDouble() < messageSuccessProbability)
                         {
-                            MessageReceived(messageBeingReceived);                            
+                            MessageReceived(messageBeingReceived);  
+                            Simulation.successCount++;
                             drawTickTimeLeft = 1;
                         }
                         else
                         {
                             drawErrorTimeLeft = 1;
+                            Simulation.failedCount++;
                         }
                     }
                     messagesFailedToReceive.Remove(messageBeingReceived.id);
@@ -134,12 +154,18 @@ namespace NetworkSimulatorUI
             }
 
 
-            SimulateTickInternal(receivingMessages.Count > 0);
+            SimulateTickInternal(receivingMessages.Count > 0,timeScale);
         }
 
-        protected abstract void SimulateTickInternal(bool otherMessagesBeingReceived);
+        protected abstract void SimulateTickInternal(bool otherMessagesBeingReceived, float timeScale);
         protected abstract void MessageReceived(OngoingMessage message);
-        public abstract void SendMessage(byte[] dataToSend);
+        protected abstract void SendMessageInternal(byte[] dataToSend);
+
+        public void SendMessage(byte[] dataToSend)
+        {
+            Simulation.totalPaketsSent++;
+            SendMessageInternal(dataToSend);
+        }
 
         protected OngoingMessage SendRawMessage(byte[] dataToSend)
         {
