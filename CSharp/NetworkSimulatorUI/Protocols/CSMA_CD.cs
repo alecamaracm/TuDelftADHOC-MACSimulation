@@ -47,7 +47,7 @@ namespace NetworkSimulatorUI.Protocols
                 Simulation.failedCount++;
                 messageBeingSent.StopSending();
                 retransmissionCount++;
-                messageToSendLater=(DateTime.Now.AddMilliseconds((500*retransmissionCount)*timeScale), messageBeingSent.data); //Schedule message to be sent later
+                messageToSendLater=(DateTime.Now.AddMilliseconds((600*retransmissionCount)*timeScale), messageBeingSent.data); //Schedule message to be sent later
                 meessageSheduledToBeSentLater = true;
                 Simulation.resendCount++;
                 Console.WriteLine($"Detected interference in CSMA_CD node {id}. Sending message {5 * retransmissionCount} seconds later...");
@@ -55,7 +55,7 @@ namespace NetworkSimulatorUI.Protocols
 
             }
 
-            if (meessageSheduledToBeSentLater && DateTime.Now >= messageToSendLater.whenToSend)
+            if (!otherMessagesBeingReceived && meessageSheduledToBeSentLater && DateTime.Now >= messageToSendLater.whenToSend)
             {
                 meessageSheduledToBeSentLater = false;
                 messageBeingSent = SendRawMessage(messageToSendLater.dataToResend);

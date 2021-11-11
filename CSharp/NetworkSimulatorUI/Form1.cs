@@ -141,7 +141,7 @@ namespace NetworkSimulatorUI
                             switch (tokens[0])
                             {
                                 case "sleep":
-                                    System.Threading.Thread.Sleep(int.Parse(tokens[1]));
+                                    System.Threading.Thread.Sleep((int)(int.Parse(tokens[1])/(float)numericUpDownTimeScale.Value));
                                     break;
                                 case "send":
                                     this.Invoke((MethodInvoker)delegate () {
@@ -273,7 +273,7 @@ namespace NetworkSimulatorUI
 
         public override void Write(char value)
         {
-            if (textbox.Text.Length > 250) textbox.Text="";
+            if (textbox.Text.Length > 1500) textbox.Text="";
             textbox.Text += value;
         }
 

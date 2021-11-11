@@ -442,8 +442,6 @@
             // checkBoxRandomMessages
             // 
             this.checkBoxRandomMessages.AutoSize = true;
-            this.checkBoxRandomMessages.Checked = true;
-            this.checkBoxRandomMessages.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxRandomMessages.Location = new System.Drawing.Point(29, 56);
             this.checkBoxRandomMessages.Name = "checkBoxRandomMessages";
             this.checkBoxRandomMessages.Size = new System.Drawing.Size(210, 20);
@@ -820,7 +818,7 @@
             this.numericUpDownTransmissionSpeed.Size = new System.Drawing.Size(94, 22);
             this.numericUpDownTransmissionSpeed.TabIndex = 5;
             this.numericUpDownTransmissionSpeed.Value = new decimal(new int[] {
-            15,
+            3,
             0,
             0,
             0});
